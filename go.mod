@@ -1,4 +1,4 @@
-module gomodreplace
+module goreplace
 
 go 1.21
 
