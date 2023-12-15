@@ -7,6 +7,7 @@ import (
 	"io"
 	"log"
 	"os"
+	"path/filepath"
 	"strings"
 
 	"gopkg.in/yaml.v3"
@@ -151,7 +152,7 @@ func appendModReplace(goModPath string, replace []FindReplace) error {
 	}
 
 	// Create a temporary file
-	tempFile, err := os.CreateTemp("", "go.mod.temp")
+	tempFile, err := os.CreateTemp(filepath.Dir(goModPath), "go.mod.temp")
 	if err != nil {
 		return err
 	}
@@ -190,7 +191,7 @@ func deleteLinesWithReplace(filePath string) error {
 	defer originalFile.Close()
 
 	// Create a temporary file
-	tempFile, err := os.CreateTemp("", "go.mod.temp")
+	tempFile, err := os.CreateTemp(filepath.Dir(filePath), "go.mod.temp")
 	if err != nil {
 		return err
 	}
