@@ -1,0 +1,2 @@
+- find: "example.com/thatmodule"
+  replace: "somewhere/else/thatmodule"
