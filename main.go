@@ -21,7 +21,7 @@ type FindReplace struct {
 func main() {
 	// Parse command-line arguments
 	goModPath := flag.String("gomod", "go.mod.test", "Path to the go.mod file")
-	goModConfigPath := flag.String("config", "modreplace.yaml", "Path to a config containing find and replace")
+	goModConfigPath := flag.String("config", "replace.yaml", "Path to a config containing find and replace")
 	clean := flag.Bool("clean", false, "Remove all replace cmds")
 	flag.Parse()
 
